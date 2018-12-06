@@ -104,14 +104,15 @@ Ans:-   select e.first_name,e.job_id,max(e.salary),d.department_name,d.manager_i
 
 
 11)	WRITE A SQL STATEMENT TO DISPLAY THE EMPLOYEE NAME (BOSS) AND NUMBER OF EMPLOYEE (SUBORDINATES) DIRECTLY REPORTING TO HIM?
-Ans:-
+Ans:-   select e1.first_name as Boss,count(e2.employee_id) as Subordinates from employees e1 inner join employees e2 on e2.manager_id =         e1.emploee_id group by e2.manager_id;
 
 
 
 
-12)	DISPLAY THE NAMES, DESIGNATION AND SALARIES OF ALL EMPLOYEES WHO HAVE MANAGER ALONG WITH MANAGER'S NAME, DESIGNATION AND MANAGER'S SALARY.
+12)	DISPLAY THE NAMES, DESIGNATION AND SALARIES OF ALL EMPLOYEES WHO HAVE MANAGER ALONG WITH MANAGER'S NAME, DESIGNATION AND                 MANAGER'S SALARY.
 	(SELF-JOIN)
-Ans:-
+Ans:-    select e.last_name,e.job_id,e.salary,m.last_name,m.job_id,m.salary from employees e inner join employees e1 where                        e.manager_id=m.employee_id;
+
 
 
 13)     CREATE THE FOLLOWING TABLES:
